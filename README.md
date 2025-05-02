@@ -9,6 +9,27 @@ PromptTo3D is a Python-based prototype that generates 3D models from textual pro
 - **Customizable Rendering**: Supports different rendering modes (`nerf` or `stf`) and adjustable output sizes.
 - **Export Options**: Save generated 3D models as `.stl` or `.obj` files.
 
+## Samples
+
+<table>
+    <body>
+        <tr>
+            <td align="center">
+                <img src="Sample GIFs/red_apple.gif" alt="A red apple">
+            </td>
+            <td align="center">
+                <img src="Sample GIFs/yellow_banana.gif" alt="A yellow banana">
+            </td align="center">
+            <td align="center">
+                <img src="Sample GIFs/building.gif" alt="A building">
+            </td>
+          <td align="center">
+                <img src="Sample GIFs/cat.gif" alt="A cat">
+            </td>
+        </tr>
+    </body>
+</table>
+
 ## Prerequisites
 
 - Python 3.8 or higher
