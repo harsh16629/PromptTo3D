@@ -89,11 +89,16 @@ The generated 3D models are saved in the current working directory as:
 ## File Structure
 ```bash
 .
-├── [LICENSE.txt]          # MIT License
-├── [Main.ipynb]           # Jupyter Notebook for running the prototype
-├── [README.md]            # Project documentation
-├── [txtTo3D.py]           # Script for text-to-3D model generation
-├── [imgTo3D.py]           # Script for image-to-3D model generation
+├── Sample GIFs/
+    ├── red_apple.gif
+    ├── yellow_banana.gif
+    ├── building.gif
+    └── cat.gif
+├── LICENSE.txt          # MIT License
+├── Main.ipynb           # Jupyter Notebook for running the prototype
+├── README.md            # Project documentation
+├── txtTo3D.py           # Script for text-to-3D model generation
+└── imgTo3D.py           # Script for image-to-3D model generation
 ```
 ## Dependencies
 The project uses the following Shape-E modules:
