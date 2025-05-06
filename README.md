@@ -110,8 +110,8 @@ The generated 3D models are saved in the current working directory as:
 
 <table>
   <tr>
-    <td><img src="IO samples\image_input_and_output.png" width="300"></td>
-    <td><img src="IO samples\text_input_and_output.png" width="300"></td>
+    <td><img src="IO samples\image_input_and_output.png" width="700" height="250"></td>
+    <td><img src="IO samples\text_input_and_output.png" width="700" height="250"></td>
   </tr>
 </table>
 
