@@ -50,16 +50,16 @@ PromptTo3D is a Python-based prototype that generates 3D models from textual pro
   - `torch`
   - `shap-e`
 
+### <mark>**Note**</mark>: 
+<mark>As this project was developed and extensively tested in a Google Colab notebook, it is recommended that you deploy and test it in the same.
+From now on, the installation and usage will be tailored for a Google Colab notebook.</mark>
+
 ## Installation and Usage
 
-### Note: 
-As this project was developed and extensively tested in a Google Colab notebook, it is recommended that you deploy and test it in a colab notebook as well.
-From now on, the installation and usage will be tailored for a google colab notebook
-
 1. Clone the Shape-E repository:
-   ```bash
-   !git clone https://github.com/harsh16629/PromptTo3D.git
-   ```
+```bash
+!git clone https://github.com/harsh16629/PromptTo3D.git
+```
 
 2. Run the Main.ipynb file and clone the shap-e repo 
 ```bash
@@ -140,7 +140,12 @@ The generated 3D models are saved in the current working directory as:
     ├── red_apple.gif
     ├── yellow_banana.gif
     ├── building.gif
-    └── cat.gif
+    ├── cat.gif
+    ├── chair.gif
+    ├── cow.gif
+    ├── mountain.gif
+    ├── shoe.gif
+    └── tree.gif
 ├── LICENSE.txt          # MIT License
 ├── Main.ipynb           # Jupyter Notebook for running the prototype
 ├── README.md            # Project documentation
