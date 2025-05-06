@@ -50,51 +50,64 @@ PromptTo3D is a Python-based prototype that generates 3D models from textual pro
   - `torch`
   - `shap-e`
 
-## Installation
+## Installation and Usage
+
+### Note: 
+As this project was developed and extensively tested in a Google Colab notebook, it is recommended that you deploy and test it in a colab notebook as well.
+From now on, the installation and usage will be tailored for a google colab notebook
 
 1. Clone the Shape-E repository:
    ```bash
-   git clone https://github.com/harsh16629/PromptTo3D.git
+   !git clone https://github.com/harsh16629/PromptTo3D.git
    ```
-2. Install the required dependencies:
-   ```bash
-   pip install -e .
-   ```
-3. Navigate back to the project directory:
-   ```bash
-   cd ..
-   ```
-### Note: 
-As this project was developed and extensively tested in a Google Colab notebook, it is recommended that you deploy and test it in a colab notebook as well.
 
-## Usage
+2. Run the Main.ipynb file and clone the shap-e repo 
+```bash
+!git clone https://github.com/openai/shap-e 
+```
 
-1. Run the Main.ipynb file and clone the shap-e repo 
-
-2. Install the required dependencies using:
+3. Install the required dependencies using:
 ```bash
 %cd shap-e             
 !pip install -e .
 ```
 
-3. Import required scripts:
+4. Import required scripts:
 ```python
 import txtTo3D, imgTo3D
 ```
-4. For Text-to-3D Model Generation
+5. For Text-to-3D Model Generation
 ```python
-# Example: Generate a 3D model of a red apple with a green leaf
-txtTo3D.txtTo3d('A red apple with a green leaf', size_=64, render_mode_ ='nerf')
-```
-5.  For Image-to-3D Model Generation
-```python
-# Load your image
-image = imgTo3D.load_image("PATH_OF_YOUR_IMAGE")
+# For text to 3D generation
+prompts = []
+while True:
+  prompt = input("Enter a prompt for 3D generation (or type 'done' to finish): ")
+  if prompt.lower() == 'done':
+    break
+  prompts.append(prompt)
 
-# Generate a 3D model
-imgTo3D.imgTo3D(image, size_=64, render_mode_='nerf')
+for prompt in prompts:
+  txtTo3D.txtTo3d(prompt, size_=128, render_mode_='nerf')
 ```
-6. Rendering Modes
+6.  For Image-to-3D Model Generation
+```python
+# For image to 3D generation
+# To get the best result, remove the background from the image, or use a plain background.
+from google.colab import files
+import io
+from PIL import Image
+
+uploaded = files.upload()
+
+# Process each uploaded file
+for filename, byte_content in uploaded.items():
+  # Convert the byte content to a PIL Image
+  image = Image.open(io.BytesIO(byte_content))
+
+  # Call the function with your image
+  imgTo3D.imgTo3D(image, size_=264, render_mode_='nerf')
+```
+7. Rendering Modes
 - `nerf`: Neural Radiance Fields rendering (default).
 - `stf`: Surface rendering.
 
