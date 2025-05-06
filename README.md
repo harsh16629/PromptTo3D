@@ -9,7 +9,7 @@ PromptTo3D is a Python-based prototype that generates 3D models from textual pro
 - **Customizable Rendering**: Supports different rendering modes (`nerf` or `stf`) and adjustable output sizes.
 - **Export Options**: Save generated 3D models as `.stl` or `.obj` files.
 
-## Samples
+## Samples GIFs
 
 <table>
     <body>
@@ -23,8 +23,20 @@ PromptTo3D is a Python-based prototype that generates 3D models from textual pro
             <td align="center">
                 <img src="Sample GIFs/building.gif" alt="A building">
             </td>
-          <td align="center">
+            <td align="center">
                 <img src="Sample GIFs/cat.gif" alt="A cat">
+            </td>
+            <td align="center">
+                <img src="Sample GIFs/mountain.gif" alt="A mountain">
+            </td>
+            <td align="center">
+                <img src="Sample GIFs/tree.gif" alt="A tree">
+            </td>
+            <td align="center">
+                <img src="Sample GIFs/chair.gif" alt="A chair">
+            </td>
+            <td align="center">
+                <img src="Sample GIFs/cow.gif" alt="A cow">
             </td>
         </tr>
     </body>
@@ -42,8 +54,7 @@ PromptTo3D is a Python-based prototype that generates 3D models from textual pro
 
 1. Clone the Shape-E repository:
    ```bash
-   git clone https://github.com/openai/shap-e
-   cd shap-e
+   git clone https://github.com/harsh16629/PromptTo3D.git
    ```
 2. Install the required dependencies:
    ```bash
@@ -55,26 +66,35 @@ PromptTo3D is a Python-based prototype that generates 3D models from textual pro
    ```
 
 ## Usage
-1. Text-to-3D Model Generation
-To generate a 3D model from a text prompt, use the txtTo3D module:
-```python
-import txtTo3D
+# Note: 
+As this project was developed and extensively tested in a Google Colab notebook, it is recommended that you deploy and test it in a colab notebook as well.
 
-# Example: Generate a 3D model of a red apple with a green leaf
-txtTo3D.txtTo3d('A red apple with a green leaf')
+1. Run the Main.ipynb file and clone the shap-e repo 
+
+2. Install the required dependencies using:
+```bash
+%cd shap-e             
+!pip install -e .
 ```
-2.  Image-to-3D Model Generation
-To generate a 3D model from an image, use the imgTo3D module:
-```python
-import imgTo3D
 
+3. Import required scripts:
+```python
+import txtTo3D, imgTo3D
+```
+4. For Text-to-3D Model Generation
+```python
+# Example: Generate a 3D model of a red apple with a green leaf
+txtTo3D.txtTo3d('A red apple with a green leaf', size_=64, render_mode_ ='nerf')
+```
+5.  For Image-to-3D Model Generation
+```python
 # Load your image
-image = imgTo3D.load_image("PATH_TO_YOUR_IMAGE")
+image = imgTo3D.load_image("PATH_OF_YOUR_IMAGE")
 
 # Generate a 3D model
 imgTo3D.imgTo3D(image, size_=64, render_mode_='nerf')
 ```
-3. Rendering Modes
+6. Rendering Modes
 - `nerf`: Neural Radiance Fields rendering (default).
 - `stf`: Surface rendering.
 
@@ -86,9 +106,21 @@ The generated 3D models are saved in the current working directory as:
 - `image_generated_mesh_<index>.stl`
 - `image_generated_mesh_<index>.obj`
 
+## Sample Input and Output Screenshots
+
+<table>
+  <tr>
+    <td><img src="IO samples\image_input_and_output.png" width="300"></td>
+    <td><img src="IO samples\text_input_and_output.png" width="300"></td>
+  </tr>
+</table>
+
 ## File Structure
 ```bash
 .
+├── IO samples/
+    ├── image_input_and_output.png
+    └── text_input_and_output.png
 ├── Sample GIFs/
     ├── red_apple.gif
     ├── yellow_banana.gif
