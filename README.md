@@ -64,10 +64,10 @@ PromptTo3D is a Python-based prototype that generates 3D models from textual pro
    ```bash
    cd ..
    ```
+### Note: 
+As this project was developed and extensively tested in a Google Colab notebook, it is recommended that you deploy and test it in a colab notebook as well.
 
 ## Usage
-# Note: 
-As this project was developed and extensively tested in a Google Colab notebook, it is recommended that you deploy and test it in a colab notebook as well.
 
 1. Run the Main.ipynb file and clone the shap-e repo 
 
@@ -110,8 +110,10 @@ The generated 3D models are saved in the current working directory as:
 
 <table>
   <tr>
-    <td><img src="IO samples\image_input_and_output.png" width="300"></td>
-    <td><img src="IO samples\text_input_and_output.png" width="300"></td>
+    <td><img src="IO samples\image_input_and_output.png" width="800" height="250"></td>
+  </tr>
+  <tr>
+    <td><img src="IO samples\text_input_and_output.png" width="800" height="250"></td>
   </tr>
 </table>
 
